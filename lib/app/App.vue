@@ -1,9 +1,7 @@
 <template>
   <div id="__nuxt">
     <% if (loading) { %><nuxt-loading ref="loading"></nuxt-loading><% } %>
-    <% if (layoutTransition) { %><transition name="<%= layoutTransition.name %>" mode="<%= layoutTransition.mode %>"><% } %>
-      <component v-if="layout" :is="nuxt.err ? 'nuxt' : layout" :key="layoutName"></component>
-    <% if (layoutTransition) { %></transition><% } %>
+    <component v-if="layout" :is="nuxt.err ? 'nuxt' : layout"></component>
   </div>
 </template>
 
