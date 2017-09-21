@@ -47,17 +47,6 @@
     ]
   },
   "scripts": {
-    "test": "npm run lint && cross-env NODE_ENV=test npm run build:nuxt && nyc ava --verbose --serial test/ -- && nyc report --reporter=html",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "eslint --ext .js,.vue bin lib pages test/*.js --ignore-pattern app",
-    "build": "rimraf dist/ && npm run build:nuxt && npm run build:core",
-    "build:nuxt": "rollup -c build/rollup.config.js --environment TARGET:nuxt",
-    "build:core": "rollup -c build/rollup.config.js --environment TARGET:core",
-    "watch": "npm run build:nuxt -- -w",
-    "make-start": "node ./build/start.js",
-    "precommit": "npm run lint",
-    "prepare": "npm run build && npm run make-start",
-    "postinstall": "opencollective postinstall || exit 0"
   },
   "engines": {
     "node": ">=6.11",
